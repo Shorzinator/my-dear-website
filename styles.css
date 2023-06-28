@@ -2,8 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* styles.css */
-
 body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
@@ -13,42 +11,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;  /* Change this */
+    min-height: 100vh;
     flex-direction: column;
     align-items: center;
-}
-
-h1 {
-    color: #333;
-}
-
-section {
-    width: 80%;
-    margin: 2rem auto;
-    padding: 80px 0; /* Increased the padding */
-    min-height: 100vh; /* New rule to make the section take at least the height of the viewport */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.section-padding {
-    padding-top: 80px; /* The height of your navbar plus some extra space */
-    margin-top: -80px;
-}
-
-h2 {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-p {
-    color: #666;
-    line-height: 1.6;
+    padding: 20px; /* Added padding */
 }
 
 #navbar {
-    position: fixed;
+    position: sticky; /* Changed from fixed to sticky */
     top: 0;
     width: 100%;
     background-color: #fff;
@@ -56,37 +26,41 @@ p {
     z-index: 10;
 }
 
-#navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+/* Other CSS rules remain the same */
 
-#navbar li {
-    float: left;
-}
-
-#navbar li a {
-    display: block;
-    color: #000;
+.hero {
+    background: url('https://drive.google.com/file/d/1cV7WjrvvDJJoTUEskjIjTgsx4HDkdEd4/view?usp=drive_link') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    position: relative;
+    background-attachment: fixed;
 }
 
-#navbar li a:hover {
-    background-color: #ddd;
+.hero::after { /* Added pseudo-element for overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-#about {
-    background-color: #f9f9f9;
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Added margin */
 }
 
-#projects {
-    /* The background-color rule is not necessary here as it's already defined in the 'section' rule */
-}
-
-#resume {
-    background-color: #f9f9f9;
+.social-links a:hover {
+    color: #007bff;
+    transition: color 0.3s ease; /* Added transition */
 }
